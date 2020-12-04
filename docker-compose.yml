@@ -2,17 +2,31 @@ version: "3.3"
 
 services:
 
-  traefik:
-    image: "traefik:latest"
-    container_name: "traefik"
-    command:
-      #- "--log.level=DEBUG"
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
+  Load_Balancer:
+    image: "haproxy"
     ports:
-      - "80:80"
       - "8080:8080"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+  
+  server1:
+    image: serverapp
+    environment:
+      - APPID=server1
+  
+  server2:
+    image: serverapp
+    environment:
+      - APPID=server2
+  server3:
+    image: serverapp
+    environment:
+      - APPID=server3
+  
+  server4:
+    image: serverapp
+    environment:
+      - APPID=server4
+
+  redis:
+    image: redis
