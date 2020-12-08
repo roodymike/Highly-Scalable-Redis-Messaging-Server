@@ -51,7 +51,7 @@ services:
       # but we can expose any port that we would like externally.
       # For example, if you are running something else on 80,
       # you probably don't want to expose the HAProxy on 80 as well.
-      - 81:80
+      - 80:80
     networks:
       - web
     deploy:

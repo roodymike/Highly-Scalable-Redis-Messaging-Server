@@ -1,34 +1,21 @@
 {
-  "name": "highly-scalable-redis-messaging-server",
-  "version": "1.0.0",
-  "description": "Highly scalable messaging application",
-  "main": "app.js",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "docker-container-id": "^1.0.1",
-    "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "http": "^0.0.1-security",
-    "ioredis": "^4.19.2",
-    "os": "^0.1.1",
-    "process": "^0.11.10",
-    "redis": "^3.0.2",
-    "socket.io": "^3.0.4",
-    "websocket": "^1.0.32",
-    "ws": "^7.4.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/roodymike/Highly-Scalable-Redis-Messaging-Server.git"
-  },
-  "author": "Sumit Mahanag",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/roodymike/Highly-Scalable-Redis-Messaging-Server/issues"
-  },
-  "homepage": "https://github.com/roodymike/Highly-Scalable-Redis-Messaging-Server#readme"
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "fs": "0.0.1-security",
+        "os": "^0.1.1",
+        "redis": "^3.0.2",
+        "socket.io": "^2.2.0"
+    }
 }
