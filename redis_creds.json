@@ -1,5 +1,6 @@
 {
     "user": "",
     "password": "",
+    "host": "rds_msg",
     "port": 6379
 }

@@ -41,6 +41,11 @@ services:
       - BALANCE=leastconn
       # Used to identify services.
       - ADDITIONAL_SERVICES=project_dir:app
+      - DNS_ENABLED=true
+      - STATS_PORT=9999
+      - COOKIES_ENABLED=true
+      #- BACKEND_MODE=TUN
+      #- COOKIES_PARAMS=cookie haproxy_app- 3 insert indirect nocache maxidle 30m maxlife 8h
     volumes:
       # Since our app services are running on the same port,
       # the HAProxy will use the docker.sock to find the
@@ -52,6 +57,8 @@ services:
       # For example, if you are running something else on 80,
       # you probably don't want to expose the HAProxy on 80 as well.
       - 80:80
+      - 9999:9999
+      - 1936:1936
     networks:
       - web
     deploy:
